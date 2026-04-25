@@ -1,0 +1,569 @@
+/* ===== Reset & Base ===== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+  font-family: 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+  color: #333;
+  background: #fff;
+  line-height: 1.7;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+
+a { color: inherit; text-decoration: none; }
+
+/* ===== Design Tokens ===== */
+:root {
+  --blue-deep:   #1F4E79;
+  --blue-brand:  #2E75B6;
+  --blue-light:  #EBF3FA;
+  --orange:      #C55A11;
+  --orange-bg:   #FCE4D6;
+  --green:       #375623;
+  --green-bg:    #E2EFDA;
+  --red:         #C00000;
+  --gray-light:  #F2F2F2;
+  --white:       #FFFFFF;
+  --text-caption:#595959;
+}
+
+/* ===== Layout ===== */
+.container {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+section { padding: 60px 0; }
+
+/* ===== Buttons ===== */
+.btn {
+  display: inline-block;
+  padding: 16px 32px;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+  transition: opacity .2s;
+  text-align: center;
+}
+.btn:hover { opacity: .85; }
+
+.btn-orange {
+  background: var(--orange);
+  color: var(--white);
+}
+.btn-outline-white {
+  background: transparent;
+  color: var(--white);
+  border: 2px solid var(--white);
+}
+.btn-blue {
+  background: var(--blue-deep);
+  color: var(--white);
+}
+.btn-white-orange {
+  background: var(--white);
+  color: var(--orange);
+  border: 2px solid var(--white);
+}
+
+/* ===== Section Title ===== */
+.section-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--blue-deep);
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* ===================================================
+   01 HERO
+=================================================== */
+#section-hero {
+  position: relative;
+  background: var(--blue-deep);
+  color: var(--white);
+  padding: 80px 0 60px;
+  overflow: hidden;
+  min-height: 520px;
+  display: flex;
+  align-items: center;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background: url('images/hero.jpg') center/cover no-repeat;
+  opacity: .35;
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-title {
+  font-size: 36px;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.hero-subtitle {
+  font-size: 20px;
+  font-style: italic;
+  color: #B8D4F0;
+  margin-bottom: 12px;
+}
+
+.hero-desc {
+  font-size: 18px;
+  margin-bottom: 32px;
+  opacity: .9;
+}
+
+.hero-btns {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.hero-tag {
+  display: none;
+}
+
+/* ===================================================
+   02 QUICK INFO
+=================================================== */
+#section-info {
+  background: var(--blue-light);
+  padding: 48px 0;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.info-card {
+  background: var(--white);
+  border: 2px solid var(--blue-brand);
+  border-radius: 10px;
+  padding: 20px 16px;
+  text-align: center;
+}
+
+.info-card-label {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--blue-deep);
+  margin-bottom: 8px;
+}
+
+.info-card-value {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--blue-brand);
+}
+
+/* ===================================================
+   03 PAIN POINTS
+=================================================== */
+#section-pain { background: var(--white); }
+
+.pain-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.pain-image img {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  max-height: 280px;
+}
+
+.pain-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.pain-card {
+  background: var(--gray-light);
+  border-radius: 10px;
+  padding: 20px 24px;
+  font-size: 20px;
+  font-style: italic;
+  color: var(--blue-deep);
+  line-height: 1.5;
+}
+
+.pain-caption {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #444;
+  margin-top: 8px;
+}
+
+/* ===================================================
+   04 OUTCOMES
+=================================================== */
+#section-outcomes { background: var(--green-bg); }
+
+.outcomes-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.outcome-card {
+  border-radius: 10px;
+  padding: 24px 16px;
+  text-align: center;
+}
+.outcome-card:nth-child(1) { background: var(--green-bg); border: 2px solid var(--green); }
+.outcome-card:nth-child(2) { background: var(--blue-light); border: 2px solid var(--blue-brand); }
+.outcome-card:nth-child(3) { background: var(--blue-light); border: 2px solid var(--blue-brand); }
+.outcome-card:nth-child(4) { background: var(--orange-bg); border: 2px solid var(--orange); }
+
+.outcome-emoji { font-size: 32px; margin-bottom: 10px; }
+.outcome-title { font-size: 16px; font-weight: 700; margin-bottom: 6px; color: var(--blue-deep); }
+.outcome-desc  { font-size: 14px; color: #555; }
+
+/* ===================================================
+   05 MID CTA
+=================================================== */
+#section-cta {
+  background: var(--orange);
+  padding: 56px 0;
+  color: var(--white);
+  text-align: center;
+}
+
+.cta-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 28px;
+}
+
+.cta-btns {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 360px;
+  margin: 0 auto;
+}
+
+.cta-note {
+  font-size: 13px;
+  margin-top: 16px;
+  opacity: .85;
+}
+
+/* ===================================================
+   06 COURSE OUTLINE (Accordion)
+=================================================== */
+#section-outline { background: var(--white); }
+
+.outline-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.outline-image img {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  max-height: 240px;
+}
+
+.accordion-list { display: flex; flex-direction: column; gap: 8px; }
+
+details.accordion-item {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+details.accordion-item summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  background: var(--blue-light);
+  cursor: pointer;
+  list-style: none;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--blue-deep);
+  gap: 8px;
+}
+details.accordion-item summary::-webkit-details-marker { display: none; }
+
+.accordion-arrow {
+  transition: transform .3s ease;
+  flex-shrink: 0;
+}
+details[open] .accordion-arrow { transform: rotate(180deg); }
+
+.accordion-body {
+  padding: 16px 20px;
+  background: var(--white);
+  font-size: 15px;
+  color: #444;
+}
+
+.accordion-body p { margin-bottom: 10px; }
+
+.accordion-body ul {
+  list-style: none;
+  padding: 0;
+}
+.accordion-body ul li::before {
+  content: '▸ ';
+  color: var(--blue-brand);
+}
+.accordion-body ul li { margin-bottom: 4px; }
+
+.accordion-summary-left { display: flex; align-items: center; gap: 8px; }
+.accordion-time { font-size: 13px; font-weight: 400; color: var(--text-caption); white-space: nowrap; }
+
+/* ===================================================
+   07 AUDIENCE
+=================================================== */
+#section-audience { background: var(--gray-light); }
+
+.audience-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.audience-col {
+  border-radius: 10px;
+  padding: 28px 24px;
+}
+
+.audience-col.fit {
+  background: var(--green-bg);
+  border: 2px solid var(--green);
+}
+
+.audience-col.no-fit {
+  background: #FCE4E4;
+  border: 2px solid var(--red);
+}
+
+.audience-col-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+.audience-col.fit    .audience-col-title { color: var(--green); }
+.audience-col.no-fit .audience-col-title { color: var(--red); }
+
+.audience-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+.audience-list li { font-size: 15px; line-height: 1.6; color: #333; }
+
+/* ===================================================
+   08 REGISTER
+=================================================== */
+#section-register {
+  background: var(--blue-deep);
+  color: var(--white);
+  text-align: center;
+}
+
+.register-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 32px;
+}
+
+.register-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.register-image img {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  max-height: 260px;
+}
+
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  text-align: left;
+  margin-bottom: 28px;
+}
+
+.step {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.step-num {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--orange);
+  color: var(--white);
+  font-weight: 700;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.step-text { font-size: 16px; line-height: 1.6; }
+.step-text strong { font-size: 17px; }
+
+.register-btns {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.register-note {
+  font-size: 13px;
+  margin-top: 14px;
+  opacity: .8;
+}
+
+/* ===================================================
+   09 FAQ
+=================================================== */
+#section-faq { background: var(--white); }
+
+/* reuse accordion styles */
+
+/* ===================================================
+   10 FLOATING CTA (mobile only)
+=================================================== */
+#floating-cta {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  background: var(--orange);
+  padding: 14px 20px;
+  text-align: center;
+  display: block;
+}
+
+#floating-cta a {
+  color: var(--white);
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/* ===================================================
+   FOOTER
+=================================================== */
+footer {
+  background: var(--blue-deep);
+  color: rgba(255,255,255,.7);
+  text-align: center;
+  padding: 32px 20px;
+  font-size: 14px;
+  line-height: 1.8;
+}
+footer a { color: #B8D4F0; }
+
+/* ===================================================
+   DESKTOP  (≥ 768px)
+=================================================== */
+@media (min-width: 768px) {
+
+  .section-title { font-size: 34px; }
+
+  /* hero */
+  #section-hero { padding: 100px 0 80px; }
+  .hero-title    { font-size: 48px; }
+  .hero-subtitle { font-size: 24px; }
+  .hero-btns {
+    flex-direction: row;
+    gap: 16px;
+  }
+  .hero-tag {
+    display: inline-block;
+    position: absolute;
+    bottom: 32px;
+    right: 0;
+    background: var(--white);
+    color: var(--blue-deep);
+    padding: 8px 16px;
+    border-radius: 8px 0 0 8px;
+    font-size: 14px;
+    font-weight: 600;
+    z-index: 1;
+  }
+
+  /* info */
+  .info-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .info-card-value { font-size: 24px; }
+
+  /* pain */
+  .pain-layout {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  .pain-image { flex: 1; }
+  .pain-cards { flex: 1; }
+
+  /* outcomes */
+  .outcomes-grid { grid-template-columns: repeat(4, 1fr); }
+
+  /* mid cta */
+  .cta-btns {
+    flex-direction: row;
+    justify-content: center;
+    max-width: none;
+  }
+  .cta-title { font-size: 34px; }
+
+  /* outline */
+  .outline-layout {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 40px;
+  }
+  .outline-image { flex: 0 0 40%; }
+  .outline-image img { max-height: none; height: 100%; }
+  .accordion-list { flex: 1; }
+
+  /* audience */
+  .audience-layout { flex-direction: row; }
+  .audience-col    { flex: 1; }
+
+  /* register */
+  .register-layout { flex-direction: row; align-items: flex-start; gap: 48px; }
+  .register-image  { flex: 0 0 40%; }
+  .register-image img { max-height: none; }
+  .register-content { flex: 1; text-align: left; }
+  .register-btns { flex-direction: row; }
+  .register-title { font-size: 34px; }
+
+  /* hide floating cta on desktop */
+  #floating-cta { display: none; }
+}
