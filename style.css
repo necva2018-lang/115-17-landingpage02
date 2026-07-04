@@ -142,9 +142,15 @@ section { padding: 60px 0; }
   gap: 12px;
 }
 
+.hero-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 20px;
+}
+
 .hero-tag {
   display: inline-block;
-  margin-top: 20px;
   background: rgba(255,255,255,.15);
   color: var(--white);
   padding: 6px 14px;
@@ -152,6 +158,26 @@ section { padding: 60px 0; }
   font-size: 13px;
   font-weight: 600;
   letter-spacing: 1px;
+}
+
+/* Sold-out styling (previous session, kept visible for transparency) */
+.text-soldout { color: #999; }
+
+.badge-soldout {
+  display: inline-block;
+  background: var(--gray-light);
+  color: #8c8c8c;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 1px 8px;
+  border-radius: 10px;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+
+.badge-soldout-dark {
+  background: rgba(255,255,255,.12);
+  color: rgba(255,255,255,.55);
 }
 
 /* ===================================================
